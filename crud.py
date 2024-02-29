@@ -6,8 +6,6 @@ def create_user(email, username, password, age, gender, occupation, state):
     db.session.commit()
     return new_user
 
-
-
 def get_user_by_id(user_id):
     return User.query.get(user_id)
 
@@ -32,8 +30,8 @@ def create_response(user_id, question_id, response_text):
 def get_responses_by_user(user_id):
     return Response.query.filter_by(user_id=user_id)
 
-def get_responses_by_question(question_id):
-    return Response.query.filter_by
+# def get_responses_by_question(question_id):
+#     return Response.query.filter_by
 
 
 

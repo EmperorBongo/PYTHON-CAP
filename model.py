@@ -12,7 +12,7 @@ class User(db.Model):
     username = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     age = db.Column(db.Integer)
-    gender = db.Column(db.string(255))
+    gender = db.Column(db.String(255))
     occupation  = db.Column(db.String(255))
     state = db.Column(db.String(255))
 
@@ -35,10 +35,6 @@ class Question(db.Model):
 
     def __repr__(self):
         return f"<Question question_id={self.question_id}, question_text={self.question_text}>"
-
-
-    # Define relationship to responses
-    responses = db.relationship('Response', backref='question', lazy=True)
 
 class Response(db.Model):
     __tablename__ = "responses"
@@ -63,8 +59,9 @@ def connect_to_db(flask_app, db_uri="postgresql://bbrbr:9822@localhost:5432/poll
     print("Connected to the db!")
 
 
+
 if __name__ == "__main__":
-    from server import app
+    from flask import current_app as app
 
     # Call connect_to_db(app, echo=False) if your program output gets
     # too annoying; this will tell SQLAlchemy not to print out every
