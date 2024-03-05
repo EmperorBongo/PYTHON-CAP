@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, url_for, session
+from flask import Flask, render_template, request, flash, redirect, url_for, session, jsonify
 from werkzeug.security import check_password_hash
 from model import User
 import crud
@@ -18,33 +18,48 @@ def base():
 def home():
     return render_template('home.html')
 
-#Home page has includes profile of user statistics and a button to go to polls
+@app.route('/polls')
+def polls():
+
+    polls = crud.get_questions()
+
+    return render_template('polls.html', polls=polls)
 
 @app.route("/create_user", methods=['POST'])
 def create_user():
     """View all users."""
     email = request.form.get('email')
-    password = request.form.get('password')
-    
-
-    
-    users = crud.create_user(email, "usernameexample", password, 1, "asdf", "asdf", "asdf")
-    print(users)
-
-    return render_template("all_users.html", users=users)
-
-@app.route('/login', methods=['POST'])
-def login():
     username = request.form.get('username')
     password = request.form.get('password')
-    user = User.query.filter_by(username=username).first()
-    if user and check_password_hash(user.password, password):
-        # User is authenticated, store user ID in session
-        session['user_id'] = user.user_id
-        return redirect(url_for('home'))
+    age = request.form.get('age')
+    gender = request.form.get('gender')
+    occupation = request.form.get('occupation')
+    state = request.form.get('state')
+    
+
+    
+    users = crud.create_user(email, username, password, age, gender, occupation, state)
+    print(users)
+
+    return redirect(url_for('home'))
+
+@app.route('/login', methods=['POST'])
+def process_login():
+    email = request.form.get('email')
+    password = request.form.get('password')
+    print(email, password)
+    users = User.query.filter_by(email=email).first()
+    print(users, users.password)
+    if users and users.password == password:
+        
+        session['user_id'] = users.user_id
+
+        print("Session Data:", session)
+
+        return redirect('/home')
     else:
         return render_template('dashboard.html', error='Invalid username or password')
-
+    
 
 @app.route('/dashboard')
 def dashboard():
@@ -53,7 +68,7 @@ def dashboard():
         user = User.query.get(session['user_id'])
         return render_template('dashboard.html', user=user)
     else:
-        return redirect(url_for('login'))
+        return redirect(url_for('dashboard'))
 
 @app.route('/logout')
 def logout():
@@ -61,7 +76,28 @@ def logout():
     session.clear()
     return redirect(url_for('login'))
 
+@app.route('/update_user', methods=['GET'])
+def update_user():
+    user_id = request.form.get('user_id')
+    email = request.form.get('email')
+    username = request.form.get('username')
+    password = request.form.get('password')
+    age = request.form.get('age')
+    gender = request.form.get('gender')
+    occupation = request.form.get('occupation')
+    state = request.form.get('state')
+
+
+    updated_user = crud.update_user(user_id, email, username, password, age, gender, occupation, state)
+
+    if updated_user:
+        return redirect('/home')
+    else:
+        return "User not found", 404
+
 if __name__ == '__main__':
+    from model import connect_to_db
+    connect_to_db(app)
     app.run(debug=True)
 
 

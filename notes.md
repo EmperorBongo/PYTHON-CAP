@@ -42,12 +42,84 @@ what is the start what is the we can ad the end later
 - what is most important
 
 
+FRONTEND 
+login
+home 
+polls 
+stats
+css 
 
-pandas
-numpy 
-tensorflow 
-lgbm
-xgbboost
-psykitlearn
-pil libary
+server
+
+Crud 
+
+need to add update and delete functions
+
+user login
+completed
+
+Features
+
+
+completed 
+login 
+
+
+
+add
+Update user information and view it user information
+button on home page to update user info
+
+delete response to poll question.
+
+user can answer multiple choice questions
+one time a day the question will be posted 
+
+
+in html i will create a poll structure that will populate with questions 
+
+query the question and potential answers that is logged under todays date in the 
+
+POLLS AND POLL DATA
+Diplaying the question and answer options. HTML
+
+CONNECT javascipt file to the HTML for dispaying questions and responses 
+
+Add event listener to each response. Inside event listener capture 
+
+response_ID (what answer did they click?)
+
+AJAX 
+POST EXAPLE FROM HAND OUT 
+we want to post information to new route in the backend
+
+python
+
+Route will extract reponse it will log the response into data base 
+
+python will pull quantity of responses for todays qeustion for a count
+
+after determineing count package it into python dict. return dictionary into the route. 
+
+from flask import jsonify
+return jsonify(dictionary)
+
+
+
+
+
+save the  in session
+
+
+
+display up to date stats or reponses upon finishing polls
+
+
+
+later 
+old poll data
+
+
+
+
 

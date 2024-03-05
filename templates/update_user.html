@@ -2,20 +2,7 @@
 {% block title %}Poller{% endblock %}
 
 {% block body %}
-  <!-- This section will outline the creation of an account and the login -->
-  <h1>Welcome to Poller</h1>
-
-  <div>
-    <p>
-      Poller is a platform where you can respond to a daily poll. Our daily poll is well though out questios that every user could relate toos.
-    </p>
-
-    <h2>Get Started</h2>
-    <p>
-      To get started, create an account or log in if you already have one. Once logged in you can, respond to the daily poll, and view your profile and statistics.
-    </p>
-  <h2>Create an Account</h2>
-  <form action="/create_user" method="POST">
+<form action="/update_user" method="POST">
     <p>
       <label for="email">Email:</label>
       <input type="text" name="email" id="email">
@@ -52,24 +39,6 @@
     </p>
     <p>
       <input type="submit">
-    </p>
-  </form>
-
-  <!-- Login -->
-  <h2>Log In</h2>
-  <form action="/login" method="POST">
-    <p>
-      <label for="login-email">Email:</label>
-      <input type="text" name="email" id="login-email">
-    </p>
-
-    <p>
-      <label for="login-password">Password:</label>
-      <input type="password" name="password" id="login-password">
-    </p>
-
-    <p>
-      <button type="submit">Submit</button>
     </p>
   </form>
 {% endblock %}

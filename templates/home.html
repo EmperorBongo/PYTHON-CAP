@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Poller{% endblock %}
+<h1>Welcome to Poller</h1>
+
+{% block body %}
+<h1>Hello</h1>
+
+<p>Thank you for joining us!</p>
+  <p>Here, you can participate in daily polls and view the results.</p>
+  <form action="/polls" method="GET">
+    <button type="submit">Go to Poll</button>
+  </form>
+
+  <form action="/stats" method="GET">
+    <button type="submit">View Stats</button>
+  </form>
+
+  <form action="/update_user" method="GET">
+    <button type="submit">Update User</button>
+  </form>
+
+  <form action="/logout" method="POST">
+    <button type="submit">Logout</button>
+  </form>
+{% endblock %}

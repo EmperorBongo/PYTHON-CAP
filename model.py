@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy 
+import json
 
 db = SQLAlchemy()
 
@@ -61,10 +62,10 @@ def connect_to_db(flask_app, db_uri="postgresql://bbrbr:9822@localhost:5432/poll
 
 
 if __name__ == "__main__":
-    from flask import current_app as app
+    from server import app
 
+    with app.app_context(): 
+        connect_to_db(app)
     # Call connect_to_db(app, echo=False) if your program output gets
     # too annoying; this will tell SQLAlchemy not to print out every
     # query it executes.
-
-    connect_to_db(app)
