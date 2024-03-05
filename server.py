@@ -1,14 +1,26 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session, jsonify
-from werkzeug.security import check_password_hash
 from model import User
 import crud
 from jinja2 import StrictUndefined
 import os
+import pusher
+
 
 app = Flask(__name__)
 app.secret_key = os.environ['SECRET_KEY']
 app.jinja_env.undefined = StrictUndefined
 app.app_context().push()
+pusher_client = pusher.Pusher(
+  app_id='1766272',
+  key='d38373f08e722507620c',
+  secret='c8aebb7b27c27f42c92a',
+  cluster='mt1',
+  ssl=True
+)
+pusher_client.trigger('my-channel', 'my-event', {'message': 'hello world'})
+
+
+
 
 @app.route('/')
 def base():
