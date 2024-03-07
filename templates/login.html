@@ -2,6 +2,16 @@
 {% block title %}Poller{% endblock %}
 
 {% block body %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/login">Poller</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="login-content">
   <!-- This section will outline the creation of an account and the login -->
   <h1>Welcome to Poller</h1>
 
@@ -14,47 +24,6 @@
     <p>
       To get started, create an account or log in if you already have one. Once logged in you can, respond to the daily poll, and view your profile and statistics.
     </p>
-  <h2>Create an Account</h2>
-  <form action="/create_user" method="POST">
-    <p>
-      <label for="email">Email:</label>
-      <input type="text" name="email" id="email">
-    </p>
-
-    <p>
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username">
-      </p>
-
-    <p>
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password">
-    </p>
-
-    <p>
-        <label for="age">Age:</label>
-        <input type="number" name="age" id="age">
-    </p>
-    
-    <p>
-        <label for="gender">Gender:</label>
-        <input type="text" name="gender" id="gender">
-    </p>
-    
-    <p>
-        <label for="occupation">Occupation:</label>
-        <input type="text" name="occupation" id="occupation">
-    </p>
-    
-    <p>
-        <label for="state">State:</label>
-        <input type="state" name="state" id="state">
-    </p>
-    <p>
-      <input type="submit">
-    </p>
-  </form>
-
   <!-- Login -->
   <h2>Log In</h2>
   <form action="/login" method="POST">
@@ -72,4 +41,9 @@
       <button type="submit">Submit</button>
     </p>
   </form>
+  <h2>Need a Account?</h2>
+  <a href="/create_account" class="create-account-link">Create Account</a>
+  
+</div>
+
 {% endblock %}

@@ -1,25 +1,63 @@
 {% extends 'base.html' %}
 {% block title %}Poller{% endblock %}
-<h1>Welcome to Poller</h1>
 
 {% block body %}
-<h1>Hello</h1>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home">Poller</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/polls">Todays Poll</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/create_quest">Create a Poll</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<p>Thank you for joining us!</p>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel"></div>
+  <div class="carousel-item">
+    <img src="" class="d-block w-100" alt="...">
+  </div>
+  <div class="carousel-item">
+    img src="..." class="d-block w-100" alt="...">
+  </div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+
+<div class="home-content"></div>
+  <h1>Welcome to Poller</h1>
+  <p>Thank you for joining us!</p>
   <p>Here, you can participate in daily polls and view the results.</p>
+
+  
   <form action="/polls" method="GET">
-    <button type="submit">Go to Poll</button>
+    <button type="submit" class="btn btn-primary">Go to Poll</button>
   </form>
-
-  <form action="/stats" method="GET">
-    <button type="submit">View Stats</button>
-  </form>
-
-  <form action="/update_user" method="GET">
-    <button type="submit">Update User</button>
+  
+  <form action="/create_quest" method="GET">
+    <button type="submit" class="btn btn-primary">create a poll</button>
   </form>
 
   <form action="/logout" method="POST">
-    <button type="submit">Logout</button>
+    <button type="submit" class="btn btn-danger">Logout</button>
   </form>
+</div>
 {% endblock %}

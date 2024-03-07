@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Poller{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home">Poller</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/polls">Todays Poll</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/create_quest">Create a Poll</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<form action="/create_question" method="POST" >
+    <h5>Create a new question</h5>
+    <div class="mb-3">
+        <label for="question_text" class="form-label">Question to be polled</label>
+        <input type="text" class="form-control" id="new_question" placeholder="Example: What is the best coding language?">
+      </div>
+      <div class="mb-3">
+        <label for="dateTime" class="form-label">Date Question will be shown</label>
+        <input type="DateTime" class="form-control" id="question_date">
+      </div>
+
+      <h5>Please enter four responses to your question</h5>
+      <div class="mb-3">
+        <label for="a" class="form-label">Response A</label>
+        <input type="text" class="form-control" id="responsea" placeholder="Python">
+      </div>
+
+      <div class="mb-3">
+        <label for="b" class="form-label">Response B</label>
+        <input type="text" class="form-control" id="responseb" placeholder="Java">
+      </div>
+      <div class="mb-3">
+        <label for="c" class="form-label">Response C</label>
+        <input type="text" class="form-control" id="responsec" placeholder="React">
+      </div>
+
+      <div class="mb-3">
+        <label for="d" class="form-label">Response D</label>
+        <input type="text" class="form-control" id="responsed " placeholder="Swift">
+      </div>
+
+      <button class="btn btn-primary" type="submit">Submit</button>      
+
+</form>
+
+{% endblock %}

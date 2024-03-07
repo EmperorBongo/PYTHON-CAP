@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Poller{% endblock %}
+
+
+{% block body %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/login">Poller</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+<h1>Create Account</h1>
+  <form action="/create_user" method="POST">
+    <p>
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email">
+    </p>
+
+    <p>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username">
+      </p>
+
+    <p>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password">
+    </p>
+    <p>
+      <input type="submit">
+    </p>
+  </form>
+
+{% endblock %}
