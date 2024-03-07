@@ -103,7 +103,7 @@ def process_login():
 def error_404(e): 
    return render_template("404.html") 
 
-@app.route('/logout')
+@app.route('/logout', methods=['POST'])
 def logout():
     session.clear()
     return render_template('login.html')
