@@ -28,31 +28,31 @@
     <h5>Create a new question</h5>
     <div class="mb-3">
         <label for="question_text" class="form-label">Question to be polled</label>
-        <input type="text" class="form-control" id="new_question" placeholder="Example: What is the best coding language?">
+        <input type="text" name="question_text" class="form-control" id="new_question" placeholder="Example: What is the best coding language?">
       </div>
       <div class="mb-3">
         <label for="dateTime" class="form-label">Date Question will be shown</label>
-        <input type="DateTime" class="form-control" id="question_date">
+        <input type="date" name="date" class="form-control" id="question_date">
       </div>
 
       <h5>Please enter four responses to your question</h5>
       <div class="mb-3">
         <label for="a" class="form-label">Response A</label>
-        <input type="text" class="form-control" id="responsea" placeholder="Python">
+        <input type="text"  name="a" class="form-control" id="responsea" placeholder="Python">
       </div>
 
       <div class="mb-3">
         <label for="b" class="form-label">Response B</label>
-        <input type="text" class="form-control" id="responseb" placeholder="Java">
+        <input type="text" name="b" class="form-control" id="responseb" placeholder="Java">
       </div>
       <div class="mb-3">
         <label for="c" class="form-label">Response C</label>
-        <input type="text" class="form-control" id="responsec" placeholder="React">
+        <input type="text" name="c" class="form-control" id="responsec" placeholder="React">
       </div>
 
       <div class="mb-3">
         <label for="d" class="form-label">Response D</label>
-        <input type="text" class="form-control" id="responsed " placeholder="Swift">
+        <input type="text" name="d" class="form-control" id="responsed " placeholder="Swift">
       </div>
 
       <button class="btn btn-primary" type="submit">Submit</button>      

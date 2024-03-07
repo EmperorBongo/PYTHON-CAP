@@ -31,22 +31,21 @@ def polls():
 def create_quest():
     return render_template('create_question.html')
 
-@app.route('/create_question')
-
+@app.route('/create_question', methods=['POST'])
 def create_question():
 
-    crud.create_question('What dog is best?', datetime.today().date(), 'Great Dane', 'Poodle', 'Pointer', 'Yorkie')
+    # crud.create_question('What dog is best?', datetime.today().date(), 'Great Dane', 'Poodle', 'Pointer', 'Yorkie')
    
     question_text = request.form.get('question_text')
-    dateTime = request.form.get('dateTime')
+    dateTime = request.form.get('date')
     a = request.form.get('a')
     b = request.form.get('b')
     c = request.form.get('c')
     d = request.form.get('d')
 
-    new_question = crud.create_question(question_text, dateTime, a, b, c, d)
+    new_date = datetime.strptime(dateTime, "%Y-%d-%m")
+    new_question = crud.create_question(question_text, new_date, a, b, c, d)
     print(new_question)
-
     return redirect('/home')
 
 @app.route("/log-response", methods=['POST'])
@@ -78,6 +77,7 @@ def create_user():
 
     
     user = crud.create_user(email, username, password)
+    session['user_id'] = user.user_id
     print(user)
 
     return redirect(url_for('home'))
