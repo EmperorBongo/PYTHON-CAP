@@ -123,3 +123,191 @@ old poll data
 
 
 
+ body {
+    font-family: Arial, sans-serif;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  } 
+
+  button {
+    background-color: blue; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  
+  /* Home Page Styles */
+  h1 {
+    color: #333;
+  }
+  
+  p {
+    color: #666;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  [c]
+  /*Home Page Styles */
+   .home-content {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  } 
+   .home-content {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .home-content h1 {
+    color: #333;
+  }
+  
+  .home-content p {
+    color: #666;
+  }
+  
+  .home-content button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .home-content button[type="submit"]:hover {
+    background-color: #0056b3;
+  } 
+
+  .response-summary {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+.response-option {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.total-response {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* login Styles */
+.login-content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.login-content h1 {
+    color: #333;
+}
+
+.login-content p {
+    color: #666;
+} 
+Home Page Styles
+.home-content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.home-content h1 {
+    color: #333;
+}
+
+.home-content p {
+    color: #666;
+}
+
+/* Polls Page Styles */
+  .polls-content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.polls-content h1 {
+    color: #333;
+}
+
+.polls-content p {
+    color: #666;
+}
+
+.polls-content button {
+    margin: 10px;
+} 

@@ -3,7 +3,7 @@
 
 {% block body %}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
+    <div class="form-contianer">
       <a class="navbar-brand" href="/home">Poller</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,22 +16,21 @@
           <li class="nav-item">
             <a class="nav-link" href="/polls">Todays Poll</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/create_quest">Create a Poll</a>
-          </li>
         </ul>
       </div>
     </div>
   </nav>
 
+<div class="form-contianer">
 <form action="/create_question" method="POST" >
     <h5>Create a new question</h5>
     <div class="mb-3">
         <label for="question_text" class="form-label">Question to be polled</label>
         <input type="text" name="question_text" class="form-control" id="new_question" placeholder="Example: What is the best coding language?">
       </div>
+
       <div class="mb-3">
-        <label for="dateTime" class="form-label">Date Question will be shown</label>
+        <label for="dateTime" class="form-label">Date question will be shown</label>
         <input type="date" name="date" class="form-control" id="question_date">
       </div>
 
@@ -58,5 +57,6 @@
       <button class="btn btn-primary" type="submit">Submit</button>      
 
 </form>
+</div>
 
 {% endblock %}

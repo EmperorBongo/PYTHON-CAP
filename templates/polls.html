@@ -3,42 +3,40 @@
 
 {% block body %}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/home">Poller</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/polls">Todays Poll</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/create_question">Create a Poll</a>
-          </li>
-        </ul>
-      </div>
+  <div class="form-contianer">
+    <a class="navbar-brand" href="/home">Poller</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/polls">Todays Poll</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/create_quest">Create a Poll</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
   
-<div class="polls-content">
+<div class="form-contianer1">
 
-<H1>Daily Poll</H1>
+    <form>
+      <h2> {{poll.question_text }} </h2>
 
-<form>
-<h2> {{poll.question_text }} </h2>
+        <button type="button" class="btn btn-primary" button id="a">A: {{ poll.a }}</button>
+        <button type="button" class="btn btn-primary" button id="b">B: {{ poll.b }}</button>
+        <button type="button" class="btn btn-primary" button id="c">C: {{ poll.c }}</button>
+        <button type="button" class="btn btn-primary" button id="d">D: {{ poll.d }}</button>
+    </form>
+    <h3>Stats will appear below once you have answered</h3>
+  <p id="response"></p>
 
-<button id="a">{{ poll.a }}</button>
-<button id="b">{{ poll.b }}</button>
-<button id="c">{{ poll.c }}</button>
-<button id="d">{{ poll.d }}</button>
-
-
-</form>
-<p id="response"></p>
 <script src="/static/button_handle.js"> </script>
 </div>
 {% endblock %}

@@ -3,7 +3,7 @@
 
 {% block body %}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
+  <div class="form-contianer">
     <a class="navbar-brand" href="/login">Poller</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,19 +11,20 @@
   </div>
 </nav>
 
-<div class="login-content">
+<div class="form-contianer"></div>
   <!-- This section will outline the creation of an account and the login -->
   <h1>Welcome to Poller</h1>
 
   <div>
-    <p>
-      Poller is a platform where you can respond to a daily poll. Our daily poll is well though out questios that every user could relate toos.
-    </p>
 
     <h2>Get Started</h2>
     <p>
-      To get started, create an account or log in if you already have one. Once logged in you can, respond to the daily poll, and view your profile and statistics.
+      To get started, create an account or log in if you already have one. Once logged in you can, respond to the daily poll.
     </p>
+
+</div>
+
+<div class="form-contianer">
   <!-- Login -->
   <h2>Log In</h2>
   <form action="/login" method="POST">

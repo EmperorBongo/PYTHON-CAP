@@ -4,13 +4,15 @@
 
 {% block body %}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
+    <div class="form-contianer">
       <a class="navbar-brand" href="/login">Poller</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
   </nav>
+
+<div class="form-contianer">
 <h1>Create Account</h1>
   <form action="/create_user" method="POST">
     <p>
@@ -31,5 +33,5 @@
       <input type="submit">
     </p>
   </form>
-
+</div>
 {% endblock %}

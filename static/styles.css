@@ -1,154 +1,137 @@
-body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .flash-msg {
-    background-color: #ffffcc;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin: 10px 0;
-  }
-  
-  /* Home Page Styles */
-  h1 {
-    color: #333;
-  }
-  
-  p {
-    color: #666;
-  }
-  
-  button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  [c]
-  /* Home Page Styles */
-  .home-content {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .home-content h1 {
-    color: #333;
-  }
-  
-  .home-content p {
-    color: #666;
-  }
-  
-  .home-content button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  .home-content button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-
-  .response-summary {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f7f7f7;
+.carousel-caption h5,
+.carousel-caption p {
+  color: black; /* Change text color to black */
+  background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent white background */
+  padding: 10px; /* Add some padding for better readability */
+  border-radius: 5px; /* Add border-radius for rounded corners */
 }
-
-.response-option {
-    margin: 5px 0;
-    font-size: 16px;
-}
-
-.total-response {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+  background-color: #007bff; /* Blue */
+  border-color: #007bff;
+  color: #fff; /* White */
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+h1, p {
+  color: #333; /* Black */
+  padding: 10px;
+  border-radius: 5px;
+  justify-content: center;
+
+}
+.form-container1 {
+  margin-top: 20px; /* Add some top margin to separate from the carousel */
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 15px; /* Add padding to the left for better alignment */
 }
 
-.btn-danger {
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+.form-container1 form {
+  margin-right: 10px; /* Add some right margin to space out the buttons */
+}
+ 
+body {
+  font-family: 'Arial Black', Arial, Helvetica, sans-serif, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right,  #6B6361, #876E58, #C46F43, #ED872D,#E7622F,#D93934);
 }
 
-.btn-danger:hover {
-    background-color: #c82333;
+
+/* Response Summary Container */
+.response-summary {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* login Styles */
-.login-content {
-    text-align: center;
-    margin-top: 50px;
+/* Response Option Container */
+.response-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
-.login-content h1 {
-    color: #333;
+/* Response Option Label */
+.response-option span {
+  margin-right: 10px;
 }
 
-.login-content p {
-    color: #666;
+/* Response Bar Styling */
+.response-bar {
+  height: 20px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
 }
 
-/* Home Page Styles */
-.home-content {
-    text-align: center;
-    margin-top: 50px;
+/* Adjust the width of the percentage bars */
+.response-bar[data-percent='A'] {
+  background-color: #6B6361; /* Adjust color for option A */
 }
 
-.home-content h1 {
-    color: #333;
+.response-bar[data-percent='B'] {
+  background-color: #C46F43; /* Adjust color for option B */
 }
 
-.home-content p {
-    color: #666;
+.response-bar[data-percent='C'] {
+  background-color: #E7622F; /* Adjust color for option C */
 }
 
-/* Polls Page Styles */
-.polls-content {
-    text-align: center;
-    margin-top: 50px;
+.response-bar[data-percent='D'] {
+  background-color: #D93934; /* Adjust color for option D */
 }
 
-.polls-content h1 {
-    color: #333;
+/* Total Response Styling */
+.total-response {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.polls-content p {
-    color: #666;
+
+
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: transparent ;
 }
 
-.polls-content button {
-    margin: 10px;
+/*
+form {
+  text-align: center;
 }
+
+
+.btn {
+  margin: 10px;
+}
+
+
+#response {
+  text-align: center;
+}
+*/
+
+input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 30%;
+  
+} 
+
+/* Gradient animation */
+
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+} 

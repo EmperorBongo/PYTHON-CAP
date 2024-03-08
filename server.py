@@ -34,7 +34,7 @@ def create_quest():
 @app.route('/create_question', methods=['POST'])
 def create_question():
 
-    # crud.create_question('What dog is best?', datetime.today().date(), 'Great Dane', 'Poodle', 'Pointer', 'Yorkie')
+    crud.create_question('What coding language is best?', datetime.today().date(), 'Python', 'Swift', 'React', 'Java')
    
     question_text = request.form.get('question_text')
     dateTime = request.form.get('date')
